@@ -1,17 +1,22 @@
 package de.unibayreuth.se.observer;
 
 public class ConcreteObserver implements Observer {
+    Subject subject;
+    int number = 0;
 
     public ConcreteObserver(Subject subject) {
-        // TODO
+        this.subject = subject;
+        number++;
     }
 
     @Override
     public void update(Subject subject) {
-        // TODO
+        Subject newsubject = subject;
+        this.subject = newsubject;
     }
 
     public void detach() {
-        // TODO
+        this.subject = null;
+        number--;
     }
 }
